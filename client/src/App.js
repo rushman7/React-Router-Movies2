@@ -11,9 +11,13 @@ const App = () => {
     setSavedList( [...savedList, movie] );
   };
 
+  const clearSavedList = () => {
+    setSavedList( [] );
+  };
+
   return (
     <div>
-      <SavedList list={savedList}/>
+      <SavedList list={savedList} clearSavedList={clearSavedList}/>
       <Route exact path='/' component={MovieList} />
       <Route 
         path='/movies/:id' 
